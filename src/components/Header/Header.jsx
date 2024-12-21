@@ -4,7 +4,7 @@ import './Header.scss'
 import { BsFillBagHeartFill } from 'react-icons/bs'
 import { RiShoppingBag3Fill } from 'react-icons/ri'
 
-export default function Header() {
+export default function Header({handleViewCart}) {
   return (
     <>
         <header className="header">
@@ -13,10 +13,7 @@ export default function Header() {
             </div>
             <nav className="header__nav">
                 <LinkIco className='header__nav-btn'>
-                    <BsFillBagHeartFill  size={30}/>
-                </LinkIco>
-                <LinkIco className='header__nav-btn'>
-                    <RiShoppingBag3Fill size={30} />
+                    <RiShoppingBag3Fill size={30} onClick={handleViewCart} />
                 </LinkIco>
             </nav>
         </header>

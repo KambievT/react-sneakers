@@ -3,9 +3,10 @@ import Card from '../ui/Card'
 import './Cards.scss'
 import { BsBagPlusFill } from 'react-icons/bs'
 
-export default function Cards({products}) {
+export default function Cards({products,postProduct}) {
     const [input,setInput] = useState('')
     const filterInput = products.filter((p) => p.name.toLowerCase().includes(input.toLocaleLowerCase()))
+    
     return (
     <>
        <main className="main">
@@ -16,9 +17,8 @@ export default function Cards({products}) {
                         <img src={product.img} alt="" />
                         <div className="cards__card-info">
                             <h3>{product.name}</h3>
-                            <p>{product.description}</p>
                             <b>{product.price}$</b>
-                            <button>
+                            <button onClick={() => postProduct(product)}>
                                 <BsBagPlusFill size={25}/>
                             </button>
                         </div>
@@ -26,9 +26,6 @@ export default function Cards({products}) {
                 ))}
             </div>
        </main>
-       <footer>
-            <h6>footer</h6>
-       </footer>
     </>
   )
 }

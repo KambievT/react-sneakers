@@ -14,3 +14,24 @@ body{
 html{
   scroll-behavior: smooth;
 }
+
+
+/* Для браузеров, поддерживающих ::-webkit-scrollbar */
+::-webkit-scrollbar {
+  width: 2px; /* Толщина вертикального скролла */
+  height: 8px; /* Толщина горизонтального скролла */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: white; /* Цвет ползунка */
+  border-radius: 4px; /* Закругление ползунка */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.8); /* Цвет ползунка при наведении */
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent; /* Цвет фона трека (можно изменить) */
+}
+
